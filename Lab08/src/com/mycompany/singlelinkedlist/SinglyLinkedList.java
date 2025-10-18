@@ -63,7 +63,7 @@ package com.mycompany.singlelinkedlist;
             } else if (currentNode != null && currentNode.next != null) {
                 Node succeedingNode = currentNode.next.next;
                 currentNode.next = succeedingNode;
-                if (succeedingNode == null) tail = currentNode; // removed tail
+                if (succeedingNode == null) tail = currentNode; 
             }
         }
 
@@ -84,14 +84,13 @@ package com.mycompany.singlelinkedlist;
             long sum = 0;
             Node prev = null, cur = head;
             while (cur != null) {
-                Node nxt = cur.next;                 // save next first
+                Node nxt = cur.next;                
                 if (sumOfPrimes.hasDigit3(cur.data)) {
-                    // unlink from this list
                     if (prev == null) head = nxt;
                     else prev.next = nxt;
                     if (cur == tail) tail = prev;
 
-                    // append to destination as a single node
+                   
                     cur.next = null;
                     dst.append(cur);
 
@@ -113,7 +112,7 @@ package com.mycompany.singlelinkedlist;
         }
 
         private static boolean isPrime(int n, int d) {
-            if ((long) d * d > n) return true; // no divisor up to sqrt(n)
+            if ((long) d * d > n) return true; 
             if (n % d == 0) return false;
             return isPrime(n, d + 1);
         }
